@@ -124,7 +124,7 @@
         .content-container ul {
             padding-left: 20px;
         }
-
+        
         footer {
             background-color: #333;
             color: white;
@@ -141,6 +141,48 @@
             text-decoration: underline;
         }
         
+        /* Media Queries für Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+            /* Navigationsleiste neu anordnen: Menü, dann Telefon */
+            .nav-content-wrapper {
+                flex-direction: column; 
+                align-items: center; 
+            }
+            nav ul {
+                flex-direction: column; /* Menüpunkte untereinander */
+                width: 100%;
+                text-align: center;
+            }
+            nav ul li {
+                margin: 5px 0; 
+            }
+            /* Telefon-Link auf dem Handy/Tablet unter das Menü verschieben und anpassen */
+            .phone-link {
+                margin-top: 10px;
+                font-size: 1em;
+            }
+
+            /* Content Container anpassen */
+            .content-container {
+                max-width: 100%;
+                padding: 10px;
+                box-sizing: border-box;
+            }
+
+            /* Header-Padding anpassen */
+            header {
+                padding: 30px 10px;
+            }
+
+            /* Fußzeilen-Links stapeln */
+            footer .footer-links a {
+                display: block;
+                margin: 5px 0;
+            }
+        }
     </style>
 </head>
 <body>
