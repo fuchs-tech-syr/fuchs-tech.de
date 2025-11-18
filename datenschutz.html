@@ -143,6 +143,11 @@
         
         /* Media Queries für Responsive Design */
         @media (max-width: 768px) {
+            /* 1. Navigationsleiste vertikal schrumpfen */
+            nav {
+                padding: 5px 10px; /* Vertikales Padding reduzieren (von 10px auf 5px) */
+            }
+
             h1 {
                 font-size: 2em;
             }
@@ -155,13 +160,17 @@
                 flex-direction: column; /* Menüpunkte untereinander */
                 width: 100%;
                 text-align: center;
+                margin-top: 5px; /* Abstand reduzieren (von 10px auf 5px) */
             }
             nav ul li {
-                margin: 5px 0; 
+                margin: 1px 0; /* Vertikalen Abstand reduzieren (von 5px auf 1px) */
+            }
+            nav ul li a {
+                padding: 5px; /* Padding des Links reduzieren (von 10px auf 5px) */
             }
             /* Telefon-Link auf dem Handy/Tablet unter das Menü verschieben und anpassen */
             .phone-link {
-                margin-top: 10px;
+                margin-top: 5px; /* Abstand reduzieren (von 10px auf 5px) */
                 font-size: 1em;
             }
 
