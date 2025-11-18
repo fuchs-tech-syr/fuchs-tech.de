@@ -390,23 +390,33 @@
         }
         
         @media (max-width: 768px) {
+            /* 1. Navigationsleiste vertikal schrumpfen */
+            nav {
+                padding: 5px 10px; /* Vertikales Padding reduzieren (von 10px auf 5px) */
+            }
+
             h1 {
                 font-size: 2em;
             }
             /* Navigationsleiste neu anordnen */
             .nav-content-wrapper {
-                flex-direction: column; /* Alles untereinander anordnen */
-                align-items: flex-start; /* Links ausrichten */
+                flex-direction: column; 
+                align-items: flex-start; 
             }
+            /* Navigationslinks (ul) auf volle Breite bringen und zentrieren */
             nav ul {
-                flex-direction: column; /* Menüpunkte untereinander */
+                flex-direction: column; 
                 width: 100%;
                 text-align: center;
-                margin-top: 10px; /* Abstand zum Logo */
+                margin-top: 5px; /* Abstand zum Logo reduzieren (von 10px auf 5px) */
             }
             nav ul li {
-                margin: 5px 0; /* Vertikalen Abstand hinzufügen */
+                margin: 1px 0; /* Vertikalen Abstand reduzieren (von 5px auf 1px) */
             }
+            nav ul li a {
+                padding: 5px; /* Padding des Links reduzieren (von 10px auf 5px) */
+            }
+            
             /* Kontakt-Links (Telefon/E-Mail) auf dem Handy ausblenden */
             .nav-contact-links {
                 display: none; 
@@ -433,9 +443,9 @@
             
             /* Buttons untereinander anordnen */
             .cta-buttons a { 
-                width: 80%; /* Die Buttons nehmen fast die volle Breite ein */
-                margin: 10px auto; /* Vertikaler Abstand und Zentrierung */
-                display: block; /* Mache sie zu Block-Elementen */
+                width: 80%; 
+                margin: 10px auto; 
+                display: block; 
             }
             
             /* Header-Text padding anpassen, damit mehr Platz ist */
