@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fuchs-Tech - Detaillierte Leistungen im Überblick</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            text-align: center;
+        }
+        /* Navigationsleiste mit Flexbox für Zentrierung und rechtem Link */
+        nav {
+            background-color: #333;
+            padding: 10px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex; 
+            justify-content: center; 
+            align-items: center;
+        }
+        /* Wrapper für die innere Verteilung der Elemente */
+        .nav-content-wrapper {
+            display: flex;
+            justify-content: space-between; 
+            align-items: center;
+            width: 100%;
+            max-width: 1200px; 
+        }
+        /* NEU: Styling für den Logo-Container */
+        .logo-container {
+            display: flex;
+            align-items: center; /* Vertikale Zentrierung */
+            padding: 0 20px 0 0; /* Abstand nach rechts zum Menü */
+        }
+        /* NEU: Styling für das Logo-Bild */
+        img.logo {
+            height: 40px; /* Definierte Höhe, um die Größe in der Navigationsleiste zu steuern */
+            width: auto;
+            display: block;
+        }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center; 
+            flex-grow: 1; 
+        }
+        nav ul li {
+            margin: 0 20px;
+        }
+        nav ul li a {
+            color: #FF8C00; /* Fox-Orange Akzent */
+            text-decoration: none;
+            font-size: 1.1em;
+            padding: 10px;
+            display: block;
+        }
+        nav ul li a:hover {
+            background-color: #555;
+            border-radius: 5px;
+        }
+        /* Highlight the active 'Services' link */
+        nav ul li a.active-service {
+            color: white;
+            background-color: #FF8C00; /* Fox-Orange Akzent */
+            border-radius: 5px;
+        }
+        /* Style für den Anruf-Link in der Navigationsleiste */
+        .phone-link {
+            color: #FF8C00; /* Fox-Orange Akzent */
+            text-decoration: none;
+            font-size: 1.1em;
+            font-weight: bold;
+            white-space: nowrap; 
+        }
+        .phone-link:hover {
+            color: white; 
+        }
+        
+        header {
+            background-color: #212121; /* Dunkles Anthrazit */
+            color: white;
+            padding: 50px 20px;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        .motto {
+            font-style: italic;
+            font-size: 1.1em;
+            margin-bottom: 30px;
+        }
+        .description {
+            font-size: 1.2em;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            line-height: 1.6;
+        }
+        
+        section {
+            padding: 50px 20px;
+            background-color: white;
+            text-align: left; /* Align text for detailed explanations */
+        }
+        /* NEU: Gestylte H2 Überschrift */
+        section h2 {
+            font-size: 2.2em;
+            font-weight: 700;
+            margin-bottom: 40px; 
+            padding-bottom: 15px;
+            text-align: center;
+            color: #FF8C00; /* Fox-Orange Akzentfarbe bleibt */
+            position: relative;
+        }
+        section h2::after {
+            content: '';
+            display: block;
+            width: 60px; /* Kurze, zentrierte Linie */
+            height: 4px;
+            background-color: #333; /* Dunkle Linie für Kontrast zum orangefarbenen Text */
+            margin: 10px auto 0; /* Zentriert die Linie */
+            border-radius: 2px;
+        }
+        .service-article {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: #f8f9fa;
+            border-left: 5px solid #FF8C00; /* Fox-Orange Akzent */
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .service-article h3 {
+            color: #333;
+            font-size: 1.8em;
+            margin-top: 0;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+        .service-article p {
+            font-size: 1.1em;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        /* Call-to-action button style for internal pages */
+        .cta-button {
+            background-color: #FF8C00; /* Fox-Orange Akzent */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            margin-top: 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .cta-button:hover {
+            background-color: #333333; /* Dunkelgrauer Hover */
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        footer .footer-links a {
+            color: #FF8C00; /* Fox-Orange Akzent */
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        footer .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Media Queries für Responsive Design */
+        @media (max-width: 768px) {
+            /* Logo auf Mobilgeräten etwas kleiner */
+            img.logo {
+                height: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-content-wrapper">
+            <div class="logo-container">
+                <a href="index.html#home">
+                    <img src="logo.png" alt="Fuchs-Tech Logo" class="logo">
+                </a>
+            </div>
+            <ul>
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="#services-detail" class="active-service">Services</a></li>
+                <li><a href="index.html#projekte">Projekte</a></li>
+                <li><a href="index.html#ueber-uns">Über uns</a></li>
+                <li><a href="index.html#kontakt">Kontakt</a></li>
+            </ul>
+            <a href="tel:+491782950718" class="phone-link">
+                📞 0178 2950718
+            </a>
+        </div>
+    </nav>
+
+    <header id="top">
+        <h1>Detaillierte Erklärungen unserer IT-Services</h1>
+        <p class="motto">Sicherheit beginnt dort, wo Kompetenz Vertrauen schafft.</p>
+        <p class="description">
+            Hier finden Sie tiefergehende Informationen zu jeder unserer angebotenen IT-Dienstleistungen. Wir zeigen Ihnen, welche Methoden wir verwenden und welchen Mehrwert Sie durch die Zusammenarbeit mit Fuchs-Tech erwarten können.
+        </p>
+        <a href="index.html#kontakt" class="cta-button">Jetzt Angebot anfragen</a>
+
+    </header>
+
+    <section id="services-detail">
+        <h2>Unsere Leistungen im Detail</h2>
+
+        <article id="cloud-virtualisierung" class="service-article">
+            <h3>☁️ Cloud und Virtualisierung</h3>
+            <p><strong>Platzhalter für Ihre detaillierte Beschreibung:</strong> Erklären Sie hier, wie Sie Kunden bei der Migration in die Cloud (z.B. Azure, AWS, Google Cloud) unterstützen, welche Virtualisierungstechnologien (z.B. VMware, Hyper-V) Sie einsetzen und welche Vorteile (Kostensenkung, Skalierbarkeit, Flexibilität) sich daraus ergeben. Gehen Sie auf Sicherheitsaspekte in der Cloud ein.</p>
+            <a href="index.html#kontakt" class="cta-button">Jetzt mehr erfahren</a>
+        </article>
+
+        <article id="netzwerksicherheit" class="service-article">
+            <h3>🔒 Netzwerksicherheit</h3>
+            <p><strong>Platzhalter für Ihre detaillierte Beschreibung:</strong> Beschreiben Sie Ihre Strategien zum Schutz vor Cyberbedrohungen. Welche Firewalls, VPN-Lösungen und Intrusion Detection/Prevention Systeme (IDS/IPS) verwenden Sie? Wie führen Sie Sicherheitsaudits durch und welche Rolle spielt die Mitarbeiterschulung dabei?</p>
+            <a href="index.html#kontakt" class="cta-button">Jetzt mehr erfahren</a>
+        </article>
+
+        <article id="datenwiederherstellung" class="service-article">
+            <h3>💾 Datenwiederherstellung</h3>
+            <p><strong>Platzhalter für Ihre detaillierte Beschreibung:</strong> Erklären Sie den Prozess der professionellen Datenwiederherstellung. Welche Backup-Lösungen (z.B. 3-2-1-Regel) empfehlen und implementieren Sie? Gehen Sie auf die Wichtigkeit eines Disaster Recovery Plans (DRP) ein und wie Sie die Geschäftskontinuität sichern.</p>
+            <a href="index.html#kontakt" class="cta-button">Jetzt mehr erfahren</a>
+        </article>
+
+        <article id="it-support" class="service-article">
+            <h3>🛠️ IT-Support</h3>
+            <p><strong>Platzhalter für Ihre detaillierte Beschreibung:</strong> Beschreiben Sie die Reaktionszeiten, die Art des Supports (Remote, Vor-Ort, 24/7), und welche Systeme Sie betreuen (Hard- und Software, Betriebssysteme). Erklären Sie, wie Ihr Ticket-System funktioniert und was einen Managed Service Provider (MSP) auszeichnet.</p>
+            <a href="index.html#kontakt" class="cta-button">Jetzt mehr erfahren</a>
+        </article>
+
+        <article id="software-entwicklung" class="service-article">
+            <h3>📱 Software-Entwicklung</h3>
+            <p><strong>Platzhalter für Ihre detaillierte Beschreibung:</strong> Welche Programmiersprachen/Frameworks beherrschen Sie? Geben Sie Beispiele für maßgeschneiderte Software (Web-Apps, Desktop-Anwendungen) und erklären Sie Ihren Entwicklungsprozess (z.B. Agile oder Wasserfall-Modell). Beschreiben Sie den Mehrwert der Individualentwicklung.</p>
+            <a href="index.html#kontakt" class="cta-button">Jetzt mehr erfahren</a>
+        </article>
+
+        <article id="it-beratung" class="service-article">
+            <h3>💡 IT-Beratung</h3>
+            <p><strong>Platzhalter für Ihre detaillierte Beschreibung:</strong> Erklären Sie, wie Sie Unternehmen bei der Entwicklung einer zukunftssicheren IT-Strategie unterstützen. Gehen Sie auf Themen wie Digitalisierung, Hardware-Beschaffung, Lizenzmanagement und Kostenoptimierung ein. Beschreiben Sie Ihre Rolle als neutraler Berater.</p>
+            <a href="index.html#kontakt" class="cta-button">Jetzt mehr erfahren</a>
+        </article>
+
+        <article id="netzwerkdesign" class="service-article">
+            <h3>🌐 Netzwerkdesign und -planung</h3>
+            <p><strong>Platzhalter für Ihre detaillierte Beschreibung:</strong> Beschreiben Sie, wie Sie Netzwerke (LAN, WLAN, WAN) planen und implementieren, um hohe Verfügbarkeit und Performance zu gewährleisten. Erklären Sie, wie Sie skalierbare Architekturen schaffen und welche Rolle Verkabelung, Router und Switches spielen.</p>
+            <a href="index.html#kontakt" class="cta-button">Jetzt mehr erfahren</a>
+        </article>
+
+        <article id="ki-automatisierung" class="service-article">
+            <h3>🤖 KI-Lösungen und Automatisierung</h3>
+            <p><strong>Platzhalter für Ihre detaillierte Beschreibung:</strong> Erklären Sie konkrete Anwendungsfälle von KI (z.B. Chatbots, Datenanalyse, Predictive Maintenance) und Automatisierung (RPA). Beschreiben Sie, wie Sie manuelle Aufgaben eliminieren und Geschäftsprozesse durch intelligente Technologien effizienter gestalten.</p>
+            <a href="index.html#kontakt" class="cta-button">Jetzt mehr erfahren</a>
+        </article>
+
+        <article id="schulungen" class="service-article">
+            <h3>🎓 Schulungen zu IT-Sicherheit und Netzwerkmanagement</h3>
+            <p><strong>Platzhalter für Ihre detaillierte Beschreibung:</strong> Beschreiben Sie Ihre Schulungsinhalte (z.B. Phishing-Erkennung, Passwortmanagement, Umgang mit sensiblen Daten). Erklären Sie, ob Sie Schulungen vor Ort oder online anbieten und wie wichtig die menschliche Komponente in der IT-Sicherheit ist.</p>
+            <a href="index.html#kontakt" class="cta-button">Jetzt mehr erfahren</a>
+        </article>
+
+        <article id="iot-integration" class="service-article">
+            <h3>📡 Internet of Things (IoT) Integration</h3>
+            <p><strong>Platzhalter für Ihre detaillierte Beschreibung:</strong> Erklären Sie, wie Sie IoT-Geräte in Unternehmensnetzwerke integrieren. Welche Sicherheitsprotokolle verwenden Sie für die Datenübertragung? Geben Sie Anwendungsbeispiele, z.B. im Bereich Smart Building oder industrielle Sensorik.</p>
+            <a href="index.html#kontakt" class="cta-button">Jetzt mehr erfahren</a>
+        </article>
+
+        <article id="updates" class="service-article">
+            <h3>🔄 Software- und Hardware-Updates</h3>
+            <p><strong>Platzhalter für Ihre detaillierte Beschreibung:</strong> Beschreiben Sie Ihren Patch-Management-Prozess und die Bedeutung regelmäßiger Updates für die Systemsicherheit. Erklären Sie, wie Sie Hardware-Lebenszyklen planen und wann ein Upgrade oder eine Erneuerung am sinnvollsten ist.</p>
+            <a href="index.html#kontakt" class="cta-button">Jetzt mehr erfahren</a>
+        </article>
+
+        <article id="webdesign" class="service-article">
+            <h3>🖥️ WebDesign und Development</h3>
+            <p><strong>Platzhalter für Ihre detaillierte Beschreibung:</strong> Erklären Sie hier Ihre Philosophie zur Webentwicklung und welche Technologien Sie verwenden (HTML, CSS, JavaScript, CMS, z.B. WordPress). Beschreiben Sie den Ablauf von der Konzeption bis zum Launch und wie Sie Mobile-Responsiveness sicherstellen.</p>
+            <a href="index.html#kontakt" class="cta-button">Jetzt mehr erfahren</a>
+        </article>
+
+    </section>
+    
+    <footer>
+        <p>© 2023 Fuchs-Tech. Alle Rechte vorbehalten.</p>
+        <p class="footer-links">
+            <a href="#" onclick="alert('Datenschutzerklärung wird bald verfügbar sein')">Datenschutz</a>
+            |
+            <a href="#" onclick="alert('Impressum wird bald verfügbar sein')">Impressum</a>
+        </p>
+    </footer>
+</body>
+</html>
