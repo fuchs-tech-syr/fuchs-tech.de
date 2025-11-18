@@ -379,10 +379,44 @@
         }
 
         /* Media Queries für Responsive Design */
+        @media (max-width: 992px) {
+            /* Anpassung für größere Tablets */
+            nav ul li {
+                margin: 0 10px;
+            }
+            .nav-contact-links {
+                gap: 10px;
+            }
+        }
+        
         @media (max-width: 768px) {
             h1 {
                 font-size: 2em;
             }
+            /* Navigationsleiste neu anordnen */
+            .nav-content-wrapper {
+                flex-direction: column; /* Alles untereinander anordnen */
+                align-items: flex-start; /* Links ausrichten */
+            }
+            nav ul {
+                flex-direction: column; /* Menüpunkte untereinander */
+                width: 100%;
+                text-align: center;
+                margin-top: 10px; /* Abstand zum Logo */
+            }
+            nav ul li {
+                margin: 5px 0; /* Vertikalen Abstand hinzufügen */
+            }
+            /* Kontakt-Links (Telefon/E-Mail) auf dem Handy ausblenden */
+            .nav-contact-links {
+                display: none; 
+            }
+            /* Logo auf Mobilgeräten etwas kleiner */
+            img.logo {
+                height: 30px;
+            }
+
+            /* Grid-Layouts stapeln */
             .highlight-grid, .project-grid {
                 flex-direction: column;
                 align-items: center;
@@ -396,9 +430,28 @@
             .contact-details {
                 margin-bottom: 20px;
             }
-            /* Logo auf Mobilgeräten etwas kleiner */
-            img.logo {
-                height: 30px;
+            
+            /* Buttons untereinander anordnen */
+            .cta-buttons a { 
+                width: 80%; /* Die Buttons nehmen fast die volle Breite ein */
+                margin: 10px auto; /* Vertikaler Abstand und Zentrierung */
+                display: block; /* Mache sie zu Block-Elementen */
+            }
+            
+            /* Header-Text padding anpassen, damit mehr Platz ist */
+            header {
+                padding: 30px 10px;
+            }
+            
+            /* Fußzeilen-Links stapeln */
+            footer .footer-links a {
+                display: block;
+                margin: 5px 0;
+            }
+            
+            /* Karte auf dem Handy kleiner machen */
+            .map iframe {
+                height: 250px;
             }
         }
     </style>
